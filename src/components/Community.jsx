@@ -1,9 +1,9 @@
 import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
-import { skills } from '../data/skills';
+import { community } from '../data/community';
 
-const Skills = () => {
+const Community = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
 
@@ -13,26 +13,25 @@ const Skills = () => {
       opacity: 1,
       transition: {
         delayChildren: 0.2,
-        staggerChildren: 0.05
+        staggerChildren: 0.12
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 20, opacity: 0, scale: 0.9 },
+    hidden: { y: 25, opacity: 0 },
     visible: {
       y: 0,
       opacity: 1,
-      scale: 1,
       transition: {
-        duration: 0.4,
+        duration: 0.5,
         ease: "easeOut"
       }
     }
   };
 
   return (
-    <section id="skills" className="py-20 px-4 sm:px-6 lg:px-8 bg-highlight/40">
+    <section id="community" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -42,7 +41,7 @@ const Skills = () => {
           className="text-center mb-16"
         >
           <h2 className="text-4xl sm:text-5xl font-display font-bold text-primary mb-4">
-            Skills
+            Community Involvement
           </h2>
           <div className="w-24 h-1 bg-accent mx-auto"></div>
         </motion.div>
@@ -51,18 +50,27 @@ const Skills = () => {
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4"
+          className="grid grid-cols-1 md:grid-cols-2 gap-6"
         >
-          {skills.map((skill, index) => (
+          {community.map((entry) => (
             <motion.div
-              key={index}
+              key={entry.id}
               variants={itemVariants}
-              whileHover={{ scale: 1.05, y: -4, boxShadow: '0 10px 20px rgba(0,0,0,0.28)' }}
-              className="bg-highlight/85 backdrop-blur-sm border border-accent/30 rounded-cozy shadow-cozy px-4 py-3 text-center transition-transform duration-300"
+              whileHover={{ y: -8, scale: 1.01, boxShadow: '0 10px 24px rgba(0,0,0,0.3)' }}
+              className="bg-highlight/85 backdrop-blur-sm border border-accent/30 rounded-cozy shadow-cozy p-6 sm:p-8 transition-transform duration-300"
             >
-              <span className="text-primary font-semibold text-sm sm:text-base">
-                {skill}
-              </span>
+              <h3 className="text-xl font-display font-semibold text-primary mb-2">
+                {entry.name}
+              </h3>
+              <p className="text-accent font-medium mb-4">{entry.role}</p>
+              <ul className="space-y-2 text-primary/75 text-sm sm:text-base">
+                {entry.highlights.map((point, idx) => (
+                  <li key={idx} className="flex items-start gap-3">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-accent"></span>
+                    <span>{point}</span>
+                  </li>
+                ))}
+              </ul>
             </motion.div>
           ))}
         </motion.div>
@@ -71,4 +79,4 @@ const Skills = () => {
   );
 };
 
-export default Skills;
+export default Community;

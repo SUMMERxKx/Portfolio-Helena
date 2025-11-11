@@ -2,6 +2,7 @@ import { motion } from 'framer-motion';
 import { useInView } from 'framer-motion';
 import { useRef } from 'react';
 import { volunteering } from '../data/volunteering';
+import { MapPin } from 'lucide-react';
 
 const Volunteering = () => {
   const ref = useRef(null);
@@ -31,7 +32,7 @@ const Volunteering = () => {
   };
 
   return (
-    <section id="volunteering" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="volunteering" className="py-20 px-4 sm:px-6 lg:px-8 bg-highlight/40">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -52,38 +53,40 @@ const Volunteering = () => {
           animate={isInView ? "visible" : "hidden"}
           className="space-y-8"
         >
-          {volunteering.map((vol, index) => (
+          {volunteering.map((vol) => (
             <motion.div
               key={vol.id}
               variants={itemVariants}
-              className="bg-background rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+              whileHover={{ y: -6, scale: 1.01, boxShadow: '0 12px 28px rgba(0,0,0,0.35)' }}
+              className="bg-highlight/85 backdrop-blur-sm border border-accent/30 rounded-cozy shadow-cozy p-6 sm:p-8 transition-transform duration-300"
             >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                 <div>
-                  <h3 className="text-xl font-display font-semibold text-primary mb-1">
+                  <h3 className="text-2xl font-display font-semibold text-primary mb-1">
                     {vol.role}
                   </h3>
                   <p className="text-lg text-accent font-medium mb-2">
                     {vol.organization}
                   </p>
+                  {vol.location && (
+                    <div className="flex items-center gap-2 text-sm text-muted">
+                      <MapPin size={16} className="text-accent" />
+                      <span>{vol.location}</span>
+                    </div>
+                  )}
                 </div>
                 <div className="text-right">
-                  <span className="text-sm text-primary/60 font-medium bg-primary/5 px-3 py-1 rounded-full">
+                  <span className="text-sm text-primary/70 font-medium bg-highlight/70 rounded-full px-4 py-2">
                     {vol.period}
                   </span>
-                  {vol.location && (
-                    <p className="text-sm text-primary/60 mt-1">
-                      {vol.location}
-                    </p>
-                  )}
                 </div>
               </div>
               
               <ul className="space-y-2">
                 {vol.bullets.map((bullet, bulletIndex) => (
-                  <li key={bulletIndex} className="flex items-start">
-                    <span className="text-accent mr-2 mt-1">•</span>
-                    <span className="text-primary/70">{bullet}</span>
+                  <li key={bulletIndex} className="flex items-start gap-3">
+                    <span className="mt-1 h-2 w-2 rounded-full bg-accent"></span>
+                    <span className="text-primary/75">{bullet}</span>
                   </li>
                 ))}
               </ul>

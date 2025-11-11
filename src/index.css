@@ -1,7 +1,15 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Quicksand:wght@300;400;500;600;700&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --color-background: #1C1512;
+  --color-primary: #F4E9DD;
+  --color-accent: #BA8D68;
+  --color-highlight: #2B201B;
+  --color-muted: rgba(244, 233, 221, 0.7);
+}
 
 * {
   margin: 0;
@@ -14,14 +22,14 @@ html {
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  background-color: #FDFCFB;
-  color: #2B2B2B;
+  font-family: 'Quicksand', 'Poppins', sans-serif;
+  background-color: var(--color-background);
+  color: var(--color-primary);
   line-height: 1.6;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Poppins', 'Quicksand', sans-serif;
   font-weight: 600;
 }
 
@@ -31,14 +39,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 ::-webkit-scrollbar-track {
-  background: #f1f1f1;
+  background: var(--color-highlight);
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #D4AF37;
-  border-radius: 4px;
+  background: var(--color-accent);
+  border-radius: 6px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #B8941F;
+  background: #9F7650;
 }

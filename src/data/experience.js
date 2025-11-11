@@ -4,11 +4,15 @@ export const experience = [
     company: "WorkSafeBC",
     role: "Industry Funding",
     period: "Sep 2025–Present",
-    description: "Analyzed funding workflows and supported financial operations.",
+    location: "Richmond, BC",
+    description: "Analyzed funding workflows and supported financial operations as an Industry Funding Co-op.",
     bullets: [
       "Analyzed funding workflows and supported financial operations",
       "Collaborated with cross-functional teams to optimize processes",
-      "Developed data-driven insights for funding decisions"
+      "Developed data-driven insights for funding decisions",
+      "Summarized Power BI data sets using Excel pivot tables to surface trends for leadership",
+      "Cleaned and optimized Access databases to improve data integrity and reporting speed",
+      "Managed and organized funding contracts, ensuring approvals and required sign-offs were completed on time"
     ]
   },
   {
@@ -16,11 +20,15 @@ export const experience = [
     company: "WorkSafeBC",
     role: "Registration Representative",
     period: "Jan–Aug 2024",
-    description: "Collaborated across departments and optimized SharePoint processes.",
+    location: "Richmond, BC",
+    description: "Collaborated across departments and optimized SharePoint processes as a Registration Representative Co-op.",
     bullets: [
       "Collaborated across departments and optimized SharePoint processes",
       "Managed client registration and documentation",
-      "Improved workflow efficiency through process optimization"
+      "Improved workflow efficiency through process optimization",
+      "Coordinated with internal and external stakeholders to maintain responsive service delivery",
+      "Created a SharePoint Teams site to streamline knowledge sharing and standard operating procedures",
+      "Assisted onboarding for new hires, providing resources and walkthroughs to accelerate ramp-up"
     ]
   },
   {

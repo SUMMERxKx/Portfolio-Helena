@@ -26,7 +26,7 @@ const Hero = () => {
   };
 
   return (
-    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-background/80">
+    <section className="min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-background to-highlight/40">
       <motion.div
         variants={containerVariants}
         initial="hidden"
@@ -41,8 +41,6 @@ const Hero = () => {
             src="/assets/helena.jpeg"
             alt="Helena Zhao"
             className="w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 lg:w-56 lg:h-56 rounded-full object-cover border-4 border-accent shadow-2xl mb-6"
-            onLoad={() => console.log('Image loaded successfully')}
-            onError={(e) => console.log('Image failed to load:', e)}
             loading="lazy"
           />
           <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-display font-bold text-primary text-center">
@@ -79,7 +77,7 @@ const Hero = () => {
             href="https://www.linkedin.com/in/helenazzhao/"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 bg-accent text-white px-4 sm:px-6 py-3 rounded-lg font-medium hover:bg-accent/90 transition-colors duration-200 w-full sm:w-auto justify-center"
+            className="flex items-center gap-2 bg-accent text-background px-4 sm:px-6 py-3 rounded-cozy font-semibold hover:bg-accent/90 transition-colors duration-200 w-full sm:w-auto justify-center shadow-cozy"
           >
             <Linkedin size={20} />
             LinkedIn
@@ -89,7 +87,7 @@ const Hero = () => {
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
             href="mailto:helenaminzhizhao@gmail.com"
-            className="flex items-center gap-2 border-2 border-accent text-accent px-4 sm:px-6 py-3 rounded-lg font-medium hover:bg-accent hover:text-white transition-colors duration-200 w-full sm:w-auto justify-center"
+            className="flex items-center gap-2 border-2 border-accent text-accent px-4 sm:px-6 py-3 rounded-cozy font-semibold hover:bg-accent hover:text-background transition-colors duration-200 w-full sm:w-auto justify-center shadow-cozy"
           >
             <Mail size={20} />
             Email
@@ -98,10 +96,10 @@ const Hero = () => {
           <motion.a
             whileHover={{ scale: 1.05, y: -2 }}
             whileTap={{ scale: 0.95 }}
-            href="/resume.pdf"
+            href="/HelenaZhao_Resume2025_For%20Website.pdf"
             target="_blank"
             rel="noopener noreferrer"
-            className="flex items-center gap-2 border-2 border-primary text-primary px-4 sm:px-6 py-3 rounded-lg font-medium hover:bg-primary hover:text-white transition-colors duration-200 w-full sm:w-auto justify-center"
+            className="flex items-center gap-2 border-2 border-primary text-primary px-4 sm:px-6 py-3 rounded-cozy font-semibold hover:bg-primary hover:text-background transition-colors duration-200 w-full sm:w-auto justify-center shadow-cozy"
           >
             <FileText size={20} />
             Resume

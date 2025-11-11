@@ -19,6 +19,7 @@ const Navbar = () => {
     { name: 'Experience', href: '#experience' },
     { name: 'Certifications', href: '#certifications' },
     { name: 'Volunteering', href: '#volunteering' },
+    { name: 'Community', href: '#community' },
     { name: 'Projects', href: '#projects' },
     { name: 'Skills', href: '#skills' },
     { name: 'Contact', href: '#contact' }
@@ -31,8 +32,8 @@ const Navbar = () => {
       transition={{ duration: 0.6, ease: "easeOut" }}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         isScrolled 
-          ? 'bg-background/95 backdrop-blur-sm shadow-lg' 
-          : 'bg-transparent'
+          ? 'bg-background/95 backdrop-blur-md shadow-cozy border-b border-highlight/60' 
+          : 'bg-background/70 backdrop-blur-sm'
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -45,12 +46,12 @@ const Navbar = () => {
           </motion.div>
           
           <div className="hidden md:block">
-            <div className="ml-10 flex items-baseline space-x-8">
+            <div className="ml-10 flex items-baseline space-x-6">
               {navItems.map((item) => (
                 <a
                   key={item.name}
                   href={item.href}
-                  className="text-primary hover:text-accent transition-colors duration-200 font-medium"
+                  className="text-primary/80 hover:text-accent transition-colors duration-200 font-medium"
                 >
                   {item.name}
                 </a>

@@ -31,7 +31,7 @@ const Projects = () => {
   };
 
   return (
-    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-white">
+    <section id="projects" className="py-20 px-4 sm:px-6 lg:px-8 bg-background">
       <div className="max-w-6xl mx-auto">
         <motion.div
           ref={ref}
@@ -52,19 +52,20 @@ const Projects = () => {
           animate={isInView ? "visible" : "hidden"}
           className="grid grid-cols-1 lg:grid-cols-2 gap-8"
         >
-          {projects.map((project, index) => (
+          {projects.map((project) => (
             <motion.div
               key={project.id}
               variants={itemVariants}
-              className="bg-background rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+              whileHover={{ y: -6, scale: 1.01, boxShadow: '0 10px 24px rgba(0,0,0,0.32)' }}
+              className="bg-highlight/85 backdrop-blur-sm border border-accent/30 rounded-cozy shadow-cozy p-6 sm:p-8 transition-transform duration-300"
             >
               <div className="mb-3">
-                <h3 className="text-xl font-display font-semibold text-primary">
+                <h3 className="text-2xl font-display font-semibold text-primary">
                   {project.title}
                 </h3>
               </div>
               
-              <p className="text-primary/80 mb-4 leading-relaxed">
+              <p className="text-primary/80 mb-4 leading-relaxed text-base sm:text-lg">
                 {project.description}
               </p>
               
@@ -72,7 +73,7 @@ const Projects = () => {
                 {project.technologies.map((tech, techIndex) => (
                   <span
                     key={techIndex}
-                    className="bg-accent/10 text-accent px-3 py-1 rounded-full text-sm font-medium"
+                    className="bg-background/60 text-accent px-3 py-1 rounded-full text-sm font-medium"
                   >
                     {tech}
                   </span>

@@ -52,15 +52,16 @@ const Certifications = () => {
           animate={isInView ? "visible" : "hidden"}
           className="space-y-8"
         >
-          {certifications.map((cert, index) => (
+          {certifications.map((cert) => (
             <motion.div
               key={cert.id}
               variants={itemVariants}
-              className="bg-white rounded-lg shadow-lg p-6 hover:shadow-xl transition-shadow duration-300"
+              whileHover={{ y: -6, scale: 1.01, boxShadow: '0 12px 28px rgba(0,0,0,0.35)' }}
+              className="bg-highlight/85 backdrop-blur-sm border border-accent/30 rounded-cozy shadow-cozy p-6 sm:p-8 transition-transform duration-300"
             >
-              <div className="flex flex-col md:flex-row md:items-center md:justify-between mb-4">
+              <div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
                 <div>
-                  <h3 className="text-xl font-display font-semibold text-primary mb-1">
+                  <h3 className="text-2xl font-display font-semibold text-primary mb-1">
                     {cert.title}
                   </h3>
                   <p className="text-lg text-accent font-medium mb-2">
@@ -68,11 +69,11 @@ const Certifications = () => {
                   </p>
                 </div>
                 <div className="text-right">
-                  <span className="text-sm text-primary/60 font-medium bg-primary/5 px-3 py-1 rounded-full">
+                  <span className="text-sm text-primary/70 font-medium bg-highlight/70 rounded-full px-4 py-2">
                     Issued {cert.issued}
                   </span>
                   {cert.expired && (
-                    <p className="text-sm text-primary/60 mt-1">
+                    <p className="text-sm text-primary/60 mt-2">
                       Expired {cert.expired}
                     </p>
                   )}

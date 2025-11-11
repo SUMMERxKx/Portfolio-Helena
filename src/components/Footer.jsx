@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
-import { Linkedin, Mail, Github } from 'lucide-react';
+import { Linkedin, Mail } from 'lucide-react';
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer id="contact" className="bg-primary text-white py-12 px-4 sm:px-6 lg:px-8">
+    <footer id="contact" className="bg-accent text-background py-14 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -14,48 +14,50 @@ const Footer = () => {
           viewport={{ once: true }}
           className="text-center"
         >
-          <h3 className="text-2xl font-display font-semibold mb-6">
+          <h3 className="text-3xl font-display font-semibold mb-4">
             Let's Connect
           </h3>
-          
-          <div className="flex justify-center space-x-6 mb-8">
+          <p className="text-background/80 mb-8 text-base sm:text-lg max-w-2xl mx-auto">
+            I'm always excited to chat about data storytelling, community building, and new experiences in Vancouver and beyond.
+          </p>
+
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-10">
             <motion.a
-              whileHover={{ scale: 1.1, y: -2 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               href="https://www.linkedin.com/in/helenazzhao/"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-white hover:text-accent transition-colors duration-200"
+              className="flex items-center justify-center gap-2 bg-background/90 text-accent font-semibold rounded-cozy px-6 py-3 shadow-cozy border border-highlight/70 hover:bg-background transition-colors duration-200"
               aria-label="LinkedIn"
             >
-              <Linkedin size={24} />
+              <Linkedin size={22} />
+              LinkedIn
             </motion.a>
-            
+
             <motion.a
-              whileHover={{ scale: 1.1, y: -2 }}
+              whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
               href="mailto:helenaminzhizhao@gmail.com"
-              className="text-white hover:text-accent transition-colors duration-200"
+              className="flex items-center justify-center gap-2 bg-background/90 text-accent font-semibold rounded-cozy px-6 py-3 shadow-cozy border border-highlight/70 hover:bg-background transition-colors duration-200"
               aria-label="Email"
             >
-              <Mail size={24} />
-            </motion.a>
-            
-            <motion.a
-              whileHover={{ scale: 1.1, y: -2 }}
-              whileTap={{ scale: 0.95 }}
-              href="https://github.com/helenazhao"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white hover:text-accent transition-colors duration-200"
-              aria-label="GitHub"
-            >
-              <Github size={24} />
+              <Mail size={22} />
+              helenaminzhizhao@gmail.com
             </motion.a>
           </div>
+
+          <div className="bg-background/15 border border-highlight/50 rounded-cozy px-6 py-5 mb-10">
+            <h4 className="text-xl font-display font-semibold text-background mb-3">
+              Languages & Interests
+            </h4>
+            <p className="text-background/80 text-sm sm:text-base">
+              English (Fluent) · Cantonese (Intermediate) · Mandarin (Beginner) · Portuguese (Beginner)
+            </p>
+          </div>
           
-          <div className="border-t border-white/20 pt-6">
-            <p className="text-white/70 text-sm">
+          <div className="border-t border-background/30 pt-6">
+            <p className="text-background/70 text-sm">
               © {currentYear} Helena Zhao. All rights reserved.
             </p>
           </div>
